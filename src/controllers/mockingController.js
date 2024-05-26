@@ -16,6 +16,7 @@ export const generateMockingProducts = (req, res) => {
     }
     res.json(products);
   } catch (e) {
+    req.logger.error(`Error al generar productos: ${e}`);
     res.status(500).send(e);
   }
 };
